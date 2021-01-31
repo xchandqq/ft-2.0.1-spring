@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html 
+    xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Spring Boot Application</title>
+        <meta 
+            charset="UTF-8">
+        <meta 
+            name="viewport" 
+            content="width=device-width, initial-scale=1.0">
+        <link 
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
+            rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
+            crossorigin="anonymous">
+    </head>
+    <body style="background: #0d6efd;">
+        <div
+            class="container"
+            style="max-width: 800px; padding-top: 48px;">
+            <div class="container" style="color: #fff; text-align: center">
+                <p class="display-1" >Welcome to my simple Spring Boot Application</p>
+                <p class="display-7" >Where I showcased Spring MVC, Spring Security, Thymeleaf, Spring Data JPA, and PostgreSQL technologies</p>
+            </div>
+        </div>
+        <div 
+            class="container"
+            style="background: #fff; padding: 64px 64px 24px 64px; margin-top: 48px; border-radius: 24px; max-width: 640px">
+            <form th:action="@{/login}" method="post">
+                <div class="mb-3">
+                    <label for="username_field" class="form-label">Username</label>
+                    <input 
+                        id="username_field" 
+                        type="text" 
+                        class="form-control"
+                        autofocus="autofocus"
+                        name="username"/>
+                </div>
+                <div class="mb-3">
+                    <label for="password_field" class="form-label">Password</label>
+                    <input 
+                        id="password_field" 
+                        type="password"
+                        class="form-control"
+                        name="password"/>
+                    <p th:if="${error}" class="h6" style="color: #dc3545">Incorrect username/password</p>
+                </div>
+                <div class="mb-3 form-check">
+                    <input 
+                        id="remember_box" 
+                        type="checkbox" 
+                        class="form-check-input"
+                        name="remember"/>
+                    <label for="remember_box" class="form-check-label">Remember Me</label>
+                </div>
+                <input 
+                    type="submit" 
+                    class="btn btn-primary" 
+                    value="Login"
+                    style="width: 100%"/>
+            </form>
+            
+            <div class="mb-3" style="padding-top: 64px;">
+                <a href="mailto:abellanosachristian@gmail.com" class="link-primary">Contact Me</a>
+                <p><a href="http://www.github.com/xchandqq" class="link-primary">GitHub Repository</a></p>
+            </div>
+        </div>
+    </body>
+</html>
